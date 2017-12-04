@@ -18,10 +18,10 @@ public class ConsultaDao {
         con = ConnectionFactory.getConnection();
     }
     
-    /*
-    public boolean cadastrarMedico(Medico medico){
+    
+    public boolean cadastrarConsulta(Consulta consulta){
                
-        String sql = "INSERT INTO medico (nome,cpf,rg,endereco,bairro,cidade,celular,telefone,email,data_nasc,crm,especialidade,salario) VALUES ( ?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO consulta (horario,dia,especialidade,exame,tipo,id_medico,id_cliente,nome_cliente,nome_medico) VALUES ( ?,?,?,?,?,?,?,?,?);";
 
         PreparedStatement stmt = null;
         
@@ -29,20 +29,18 @@ public class ConsultaDao {
         
         try {       
             stmt = con.prepareStatement(sql);
-            stmt.setString(1, medico.getNome());
-            stmt.setString(2, medico.getCpf());
-            stmt.setString(3, medico.getRg());
-            stmt.setString(4, medico.getEndereco());
-            stmt.setString(5,  medico.getBairro());
-            stmt.setString(6, medico.getCidade());
-            stmt.setString(7, medico.getCelular());
-            stmt.setString(8, medico.getTelefone());
-            stmt.setString(9, medico.getEmail());
+            stmt.setString(1, consulta.getHorario()); 
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-            stmt.setDate(10, new java.sql.Date(format.parse(medico.getDataNasc()).getTime()));
-            stmt.setString(11,  medico.getCrm());
-            stmt.setString(12, medico.getEspecialidade());
-            stmt.setString(13, medico.getSalario());
+            stmt.setDate(2, new java.sql.Date(format.parse(consulta.getDia()).getTime()));
+            stmt.setString(3, consulta.getEspecialidade());
+            stmt.setString(4, consulta.getExame());
+            stmt.setString(5,  consulta.getTipo());
+            stmt.setString(6, consulta.getId_medico());
+            stmt.setString(7, consulta.getId_cliente());
+            stmt.setString(8, consulta.getNomeCliente());
+            stmt.setString(9, consulta.getNomeMedico());
+            
+            
             
             stmt.executeUpdate();
             return true;
@@ -54,7 +52,7 @@ public class ConsultaDao {
             ConnectionFactory.closeConnection(con, stmt);
         }              
     }
-    */
+    
     public ArrayList<Consulta> pesquisarConsulta(String dia,String id_medico){
         String sql;
         PreparedStatement stmt = null;

@@ -9,6 +9,7 @@ public class TelaEntrada extends javax.swing.JFrame {
    
 
     public TelaEntrada() {
+        super("Tela de Entrada");
         initComponents();
     }
 
@@ -16,27 +17,38 @@ public class TelaEntrada extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jButtonCadastrar = new javax.swing.JButton();
-        jButtonCancelar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButtonCadastrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jButtonCadastrar1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 900));
+        setSize(new java.awt.Dimension(900, 600));
+        getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 24)); // NOI18N
-        jLabel2.setText("Clinica Saracura");
+        jButton4.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jButton4.setText("Cadastrar um Cliente");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(467, 415, 363, 51);
 
         jButtonCadastrar.setBackground(new java.awt.Color(0, 102, 204));
         jButtonCadastrar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -46,6 +58,39 @@ public class TelaEntrada extends javax.swing.JFrame {
                 jButtonCadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonCadastrar);
+        jButtonCadastrar.setBounds(664, 95, 96, 43);
+
+        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
+        jLabel1.setText("Cadastros");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(362, 375, 89, 22);
+
+        jButton5.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jButton5.setText("Cancelar um Exame");
+        getContentPane().add(jButton5);
+        jButton5.setBounds(467, 311, 363, 51);
+
+        jButtonCadastrar1.setBackground(new java.awt.Color(0, 204, 51));
+        jButtonCadastrar1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
+        jButtonCadastrar1.setText("Grupo");
+        jButtonCadastrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastrar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCadastrar1);
+        jButtonCadastrar1.setBounds(556, 95, 102, 43);
+
+        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
+        jLabel4.setText("Cancelamentos");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(340, 271, 134, 22);
+
+        jButton3.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jButton3.setText("Agendar um Exame");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(467, 217, 363, 48);
 
         jButtonCancelar.setBackground(new java.awt.Color(255, 51, 51));
         jButtonCancelar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -60,20 +105,8 @@ public class TelaEntrada extends javax.swing.JFrame {
                 jButtonCancelarActionPerformed(evt);
             }
         });
-
-        jButton1.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        jButton1.setText("Cadastrar um Médico");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
-        jLabel1.setText("Cadastros");
-
-        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
-        jLabel3.setText("Agendamentos");
+        getContentPane().add(jButtonCancelar);
+        jButtonCancelar.setBounds(766, 95, 96, 43);
 
         jButton2.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jButton2.setText("Agendar uma Consulta");
@@ -82,137 +115,50 @@ public class TelaEntrada extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(43, 217, 337, 48);
 
-        jButton3.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        jButton3.setText("Agendar um Exame");
-
-        jButton4.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        jButton4.setText("Cadastrar um Cliente");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
+        jButton1.setText("Cadastrar um Médico");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(43, 415, 336, 51);
 
-        jButton5.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        jButton5.setText("Cancelar um Exame");
+        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 24)); // NOI18N
+        jLabel2.setText("Clinica Saracura");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(150, 40, 283, 73);
+
+        jLabel3.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
+        jLabel3.setText("Agendamentos");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(342, 170, 139, 29);
 
         jButton6.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jButton6.setText("Cancelar uma Consulta");
+        getContentPane().add(jButton6);
+        jButton6.setBounds(43, 311, 336, 51);
 
-        jLabel4.setFont(new java.awt.Font("Bookman Old Style", 0, 18)); // NOI18N
-        jLabel4.setText("Cancelamentos");
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon.png"))); // NOI18N
+        jLabel6.setMaximumSize(new java.awt.Dimension(50, 50));
+        jLabel6.setPreferredSize(new java.awt.Dimension(50, 50));
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(60, -10, 190, 240);
 
-        jButtonCadastrar1.setBackground(new java.awt.Color(0, 204, 51));
-        jButtonCadastrar1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jButtonCadastrar1.setText("Grupo");
-        jButtonCadastrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCadastrar1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118)
-                        .addComponent(jButtonCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(32, 32, 32))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(365, 365, 365)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(40, 40, 40))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(345, 345, 345)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addComponent(jLabel4)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonCadastrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(133, 133, 133))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(83, 83, 83))
-        );
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/teste.png"))); // NOI18N
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(0, 0, 910, 530);
 
         jMenu1.setText("Menu");
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        pack();
+        setSize(new java.awt.Dimension(921, 584));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -271,9 +217,10 @@ public class TelaEntrada extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
     public Cliente getCliente() {

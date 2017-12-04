@@ -9,11 +9,15 @@ public class Consulta {
     private String tipo;
     private String id_medico;
     private String id_cliente;
+    private String nomeMedico;
+    private String nomeCliente;
     
     public Consulta(){
         
     }
-
+    
+    
+    
     public String getHorario() {
         return horario;
     }
@@ -76,6 +80,22 @@ public class Consulta {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getNomeMedico() {
+        return nomeMedico;
+    }
+
+    public void setNomeMedico(String nomeMedico) {
+        this.nomeMedico = nomeMedico;
+    }
+
+    public String getNomeCliente() {
+        return nomeCliente;
+    }
+
+    public void setNomeCliente(String nomeCliente) {
+        this.nomeCliente = nomeCliente;
     }
     
     

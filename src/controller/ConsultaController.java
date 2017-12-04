@@ -12,14 +12,14 @@ public class ConsultaController {
         
     }
     
-    /*
-    public void cadastrarCliente(Cliente cliente){
-       ClienteDao daoCliente = new ClienteDao();
-        if(daoCliente.cadastrarCliente(cliente)){
+    
+    public void cadastrarConsulta(Consulta consulta){
+       ConsultaDao daoConsulta = new ConsultaDao();
+        if(daoConsulta.cadastrarConsulta(consulta)){
               JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!", "Reposta do servidor", JOptionPane.PLAIN_MESSAGE);
         }       
     }
-    */
+    
     
     public ArrayList<Consulta> pesquisarConsulta(String dia, String id_medico){
         ConsultaDao dao = new ConsultaDao();

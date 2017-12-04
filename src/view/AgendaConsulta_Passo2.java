@@ -12,9 +12,12 @@ import model.Medico;
 
 public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
     private Medico medico;
+    private String dataPesq;
 
     public AgendaConsulta_Passo2() {
+        super("Agendamento de Consulta");
         initComponents();
+        
 
     }
 
@@ -22,21 +25,28 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jDayChooser = new com.toedter.calendar.JDayChooser();
         jNome = new javax.swing.JLabel();
         jNome1 = new javax.swing.JLabel();
         jComboBox = new javax.swing.JComboBox<>();
+        jLabelEspecialidade = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelDoutor = new javax.swing.JLabel();
         jButtonCadastrar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 18)); // NOI18N
         jLabel2.setText("Agendar uma Consulta");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(160, 30, 228, 34);
 
         jDayChooser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -48,54 +58,38 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
                 jDayChooserPropertyChange(evt);
             }
         });
+        getContentPane().add(jDayChooser);
+        jDayChooser.setBounds(70, 149, 390, 220);
 
         jNome.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jNome.setText("Escolha um dia");
+        getContentPane().add(jNome);
+        jNome.setBounds(80, 120, 106, 16);
 
         jNome1.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jNome1.setText("Escolha um horário");
+        getContentPane().add(jNome1);
+        jNome1.setBounds(90, 370, 106, 33);
 
         jComboBox.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 jComboBoxPropertyChange(evt);
             }
         });
+        getContentPane().add(jComboBox);
+        jComboBox.setBounds(110, 400, 314, 33);
+        getContentPane().add(jLabelEspecialidade);
+        jLabelEspecialidade.setBounds(370, 80, 128, 40);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jNome, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel2)
-                        .addGap(134, 134, 134))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jDayChooser, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
-                    .addComponent(jNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(jNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jDayChooser, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
+        jLabel1.setText("Especialidade:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(270, 80, 104, 40);
+
+        jLabel3.setText("Doutor(a):");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(50, 90, 59, 18);
+        getContentPane().add(jLabelDoutor);
+        jLabelDoutor.setBounds(120, 90, 84, 24);
 
         jButtonCadastrar.setBackground(new java.awt.Color(0, 102, 204));
         jButtonCadastrar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -105,6 +99,8 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
                 jButtonCadastrarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonCadastrar);
+        jButtonCadastrar.setBounds(120, 450, 121, 43);
 
         jButtonCancelar.setBackground(new java.awt.Color(255, 51, 51));
         jButtonCancelar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -114,35 +110,19 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
                 jButtonCancelarMouseClicked(evt);
             }
         });
+        getContentPane().add(jButtonCancelar);
+        jButtonCancelar.setBounds(290, 450, 127, 43);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/teste.png"))); // NOI18N
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, 0, 550, 510);
 
         jMenu1.setText("Menu");
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
-        );
-
-        pack();
+        setSize(new java.awt.Dimension(562, 565));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -151,7 +131,13 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarMouseClicked
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        
+            AgendaConsulta_Passo3 agenda3 = new AgendaConsulta_Passo3();
+            agenda3.setMedico(this.getMedico());
+            agenda3.getConsulta().setHorario((String) this.jComboBox.getSelectedItem());
+            agenda3.getConsulta().setDia(this.getDataPesq());
+            agenda3.setVisible(true);
+            this.dispose();
+            
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jComboBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jComboBoxPropertyChange
@@ -164,13 +150,16 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
 
     private void jDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDayChooserPropertyChange
         if(this.getMedico() != null){
+            this.jLabelDoutor.setText(this.getMedico().getNome());
+            this.jLabelEspecialidade.setText(this.getMedico().getEspecialidade());
+        
             Calendar cal = Calendar.getInstance();
             int month = cal.get(Calendar.MONTH) + 1;
             int year = cal.get(Calendar.YEAR);
-            String dataPesq = jDayChooser.getDay()+"/"+month+"/"+year;
+            this.setDataPesq(jDayChooser.getDay()+"/"+month+"/"+year);
             ConsultaController consulta = new ConsultaController();
 
-            ArrayList<Consulta> cons = consulta.pesquisarConsulta(dataPesq, this.getMedico().getId());
+            ArrayList<Consulta> cons = consulta.pesquisarConsulta(this.getDataPesq(), this.getMedico().getId());
             
             String horario;
             int horas = 8;
@@ -218,12 +207,16 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JComboBox<Object> jComboBox;
     private com.toedter.calendar.JDayChooser jDayChooser;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelDoutor;
+    private javax.swing.JLabel jLabelEspecialidade;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel jNome;
     private javax.swing.JLabel jNome1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
     public Medico getMedico() {
@@ -232,6 +225,14 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
 
     public void setMedico(Medico medico) {
         this.medico = medico;
+    }
+
+    public String getDataPesq() {
+        return dataPesq;
+    }
+
+    public void setDataPesq(String dataPesq) {
+        this.dataPesq = dataPesq;
     }
 
 

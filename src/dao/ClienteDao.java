@@ -60,7 +60,22 @@ public class ClienteDao {
             stmt.setString(1,nome);
             stmt.setString(2,cpf);
             ResultSet rs = stmt.executeQuery();
-            Cliente cliente = (Cliente)rs;
+            Cliente cliente = null;
+            while(rs.next()){
+                cliente = new Cliente();
+                cliente.setNome(rs.getString("nome"));
+                cliente.setBairro(rs.getString("bairro"));
+                cliente.setCelular(rs.getString("celular"));
+                cliente.setCidade(rs.getString("cidade"));
+                cliente.setCpf(rs.getString("cpf"));
+                cliente.setDataNasc(rs.getString("data_nasc"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setEndereco(rs.getString("endereco"));
+                cliente.setId(rs.getString("id_cliente"));
+                cliente.setTelefone(rs.getString("telefone"));
+                cliente.setRg(rs.getString("rg"));
+                
+            }
             return cliente;
             
         } catch (SQLException ex) {
