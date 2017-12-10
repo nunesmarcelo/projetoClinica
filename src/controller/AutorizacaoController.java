@@ -1,6 +1,6 @@
 package controller;
 
-import model.Consulta;
+import model.Atendimento;
 import model.Convenio;
 import model.Cortesia;
 import model.Cartao;

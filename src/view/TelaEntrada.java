@@ -140,6 +140,11 @@ public class TelaEntrada extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jButton6.setText("Cancelar uma Consulta");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6);
         jButton6.setBounds(43, 311, 336, 51);
 
@@ -194,6 +199,11 @@ public class TelaEntrada extends javax.swing.JFrame {
         CadastroCliente cadastro = new CadastroCliente();
         cadastro.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+    
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        CancelarConsulta cancelamento = new CancelarConsulta();
+        cancelamento.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

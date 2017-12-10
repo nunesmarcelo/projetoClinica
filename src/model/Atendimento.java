@@ -1,6 +1,6 @@
 package model;
 
-public class Consulta {
+public class Atendimento {
     private String id;
     private String horario;
     private String dia;
@@ -12,11 +12,9 @@ public class Consulta {
     private String nomeMedico;
     private String nomeCliente;
     
-    public Consulta(){
+    public Atendimento(){
         
     }
-    
-    
     
     public String getHorario() {
         return horario;
@@ -97,6 +95,12 @@ public class Consulta {
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente = nomeCliente;
     }
-    
+
+	@Override
+	public String toString() {
+		return "Consulta [id=" + id + ", horario=" + horario + ", dia=" + dia + ", especialidade=" + especialidade
+				+ ", exame=" + exame + ", tipo=" + tipo + ", id_medico=" + id_medico + ", id_cliente=" + id_cliente
+				+ ", nomeMedico=" + nomeMedico + ", nomeCliente=" + nomeCliente + "]";
+	}
     
 }

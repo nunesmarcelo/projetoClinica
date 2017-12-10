@@ -10,16 +10,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import model.Atendimento;
 
-public class ConsultaDao {
+public class ExameDao {
     Connection con = null;
     
     
-    public ConsultaDao(){
+    public ExameDao(){
         con = ConnectionFactory.getConnection();
     }
     
     
-    public boolean cadastrarConsulta(Atendimento consulta){
+    public boolean cadastrarExame(Atendimento consulta){
                
         String sql = "INSERT INTO consulta (horario,dia,especialidade,exame,tipo,id_medico,id_cliente,nome_cliente,nome_medico) VALUES ( ?,?,?,?,?,?,?,?,?);";
 
@@ -53,7 +53,7 @@ public class ConsultaDao {
         }              
     }
     
-    public ArrayList<Atendimento> pesquisarConsulta(String dia,String id_medico){
+    public ArrayList<Atendimento> pesquisarExame(String dia,String id_medico){
         String sql;
         PreparedStatement stmt = null;
         
@@ -92,11 +92,11 @@ public class ConsultaDao {
            
     }
     
-    public ArrayList<Atendimento> pesquisarConsultaCPF(String cpf){
+    public ArrayList<Atendimento> pesquisarExameCPF(String cpf){
         String sql;
         PreparedStatement stmt = null;
         
-        sql = "SELECT consulta.* FROM consulta INNER JOIN cliente WHERE cliente.cpf = ? AND consulta.exame IS NULL ";
+        sql = "SELECT consulta.* FROM consulta INNER JOIN cliente WHERE cliente.cpf = ? AND consulta.especialidade IS NULL ";
         try {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, cpf);
@@ -129,13 +129,11 @@ public class ConsultaDao {
         }          
     }
     
-    public boolean cancelarConsulta(int  idconsulta){
+    public boolean cancelarExame(int  idconsulta){
         
         String sql = "DELETE FROM consulta WHERE id_consulta = ?;";
 
         PreparedStatement stmt = null;
-        
-        
         
         try {       
             stmt = con.prepareStatement(sql);

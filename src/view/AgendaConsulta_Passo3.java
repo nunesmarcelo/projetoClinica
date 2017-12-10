@@ -2,12 +2,12 @@ package view;
 import controller.ClienteController;
 import controller.ConsultaController;
 import model.Cliente;
-import model.Consulta;
+import model.Atendimento;
 import model.Medico;
 
 public class AgendaConsulta_Passo3 extends javax.swing.JFrame {
     private Medico medico;
-    private Consulta consulta = new Consulta();
+    private Atendimento consulta = new Atendimento();
     
 
     public AgendaConsulta_Passo3() {
@@ -176,11 +176,11 @@ public class AgendaConsulta_Passo3 extends javax.swing.JFrame {
         this.medico = medico;
     }
 
-    public Consulta getConsulta() {
+    public Atendimento getConsulta() {
         return consulta;
     }
 
-    public void setConsulta(Consulta consulta) {
+    public void setConsulta(Atendimento consulta) {
         this.consulta = consulta;
     }
     

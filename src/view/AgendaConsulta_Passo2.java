@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Consulta;
+import model.Atendimento;
 import model.Medico;
 
 public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
@@ -159,7 +159,7 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
             this.setDataPesq(jDayChooser.getDay()+"/"+month+"/"+year);
             ConsultaController consulta = new ConsultaController();
 
-            ArrayList<Consulta> cons = consulta.pesquisarConsulta(this.getDataPesq(), this.getMedico().getId());
+            ArrayList<Atendimento> cons = consulta.pesquisarConsulta(this.getDataPesq(), this.getMedico().getId());
             
             String horario;
             int horas = 8;
