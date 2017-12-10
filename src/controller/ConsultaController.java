@@ -4,7 +4,7 @@ import dao.ConsultaDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Consulta;
-
+import controller.AutorizacaoController;;
 
 public class ConsultaController {
     
@@ -14,10 +14,15 @@ public class ConsultaController {
     
     
     public void cadastrarConsulta(Consulta consulta){
-       ConsultaDao daoConsulta = new ConsultaDao();
-        if(daoConsulta.cadastrarConsulta(consulta)){
-              JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!", "Reposta do servidor", JOptionPane.PLAIN_MESSAGE);
-        }       
+    	AutorizacaoController autorizar =  new AutorizacaoController(); 
+    	
+    	if (autorizar.autorizacao(consulta.getTipo())) {
+	    	ConsultaDao daoConsulta = new ConsultaDao();
+	        if(daoConsulta.cadastrarConsulta(consulta)){
+	              JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!", "Reposta do servidor", JOptionPane.PLAIN_MESSAGE);
+	        }       
+    	}
+    
     }
     
     

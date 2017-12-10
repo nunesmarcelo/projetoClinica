@@ -95,7 +95,7 @@ public class AgendaConsulta_Passo3 extends javax.swing.JFrame {
         getContentPane().add(jNome2);
         jNome2.setBounds(24, 186, 114, 26);
 
-        jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Selecione um tipo>", "Cortesia", "Particular", "Convênio" }));
+        jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "<Selecione um tipo>", "Cortesia", "Cartão","Dinheiro","Cheque", "Convênio" }));
         getContentPane().add(jComboBox);
         jComboBox.setBounds(142, 182, 279, 34);
 
