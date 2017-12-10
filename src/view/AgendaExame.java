@@ -32,7 +32,7 @@ public class AgendaExame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jNome7 = new javax.swing.JLabel();
+
         jButtonCadastrar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
         jNome8 = new javax.swing.JLabel();
@@ -49,10 +49,7 @@ public class AgendaExame extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(146, 21, 228, 34);
 
-        jNome7.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jNome7.setText("Selecione um exame:");
-        getContentPane().add(jNome7);
-        jNome7.setBounds(100, 190, 158, 34);
+ 
 
         jButtonCadastrar.setBackground(new java.awt.Color(0, 102, 204));
         jButtonCadastrar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -129,10 +126,18 @@ public class AgendaExame extends javax.swing.JFrame {
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         AgendaExame_Passo2 agenda2 = new AgendaExame_Passo2();
+        Exame exame = new Exame();
+        ExameController exameCtr = new ExameController();
+        
+        exame = exameCtr.pesquisarExamePorNome((String)jComboBoxExame.getSelectedItem());
+        if(exame == null) {
 
-        agenda2.setExame((Exame)(jComboBoxExame.getSelectedItem()));
-        agenda2.setVisible(true);
-        this.dispose();
+            this.dispose();
+        }else {
+	        agenda2.setExame(exame);
+	        agenda2.setVisible(true);
+	        this.dispose();
+        }
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
 
@@ -169,7 +174,6 @@ public class AgendaExame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JLabel jNome7;
     private javax.swing.JLabel jNome8;
     // End of variables declaration//GEN-END:variables
 

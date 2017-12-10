@@ -66,8 +66,33 @@ public class ExameDao {
         }finally {
             ConnectionFactory.closeConnection(con, stmt);
             
-        }  
+        }         
+    }
+    
+
+    public Exame pesquisarExamePorNome(String nome){
+        String sql;
+        PreparedStatement stmt = null;
         
-        
+        sql = "SELECT * FROM exame WHERE nome = ?";
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, nome);
+            
+            ResultSet rs = stmt.executeQuery();
+            Exame exame = new Exame();
+            while(rs.next()){
+                exame.setNome(rs.getString("nome"));
+                exame.setId(rs.getInt("idexame"));
+            }
+            return exame;
+            
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);
+            return null;
+        }finally {
+            ConnectionFactory.closeConnection(con, stmt);
+            
+        }         
     }
 }

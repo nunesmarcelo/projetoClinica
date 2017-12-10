@@ -144,7 +144,8 @@ public class AgendaExame_Passo2 extends javax.swing.JFrame {
 
     private void jDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDayChooserPropertyChange
         if(this.getExame() != null){
-            this.jLabelDoutor.setText(this.getExame().getNome());
+
+            this.jLabelEspecialidade.setText(this.getExame().getNome());
         
             Calendar cal = Calendar.getInstance();
             int month = cal.get(Calendar.MONTH) + 1;

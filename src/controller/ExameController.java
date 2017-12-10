@@ -27,4 +27,9 @@ public class ExameController {
         ExameDao daoExame= new ExameDao();
         return daoExame.pesquisarExame();
     }
+    
+    public Exame pesquisarExamePorNome(String nome){
+        ExameDao daoExame= new ExameDao();
+        return daoExame.pesquisarExamePorNome(nome);
+    }
 }
