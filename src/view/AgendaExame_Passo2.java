@@ -125,8 +125,8 @@ public class AgendaExame_Passo2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarMouseClicked
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-            AgendaConsulta_Passo3 agenda3 = new AgendaConsulta_Passo3();
-            agenda3.setMedico(this.getMedico());
+            AgendaExame_Passo3 agenda3 = new AgendaExame_Passo3();
+            agenda3.setExame(this.getExame());
             agenda3.getConsulta().setHorario((String) this.jComboBox.getSelectedItem());
             agenda3.getConsulta().setDia(this.getDataPesq());
             agenda3.setVisible(true);
@@ -143,9 +143,8 @@ public class AgendaExame_Passo2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jDayChooserMouseClicked
 
     private void jDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDayChooserPropertyChange
-        if(this.getMedico() != null){
-            this.jLabelDoutor.setText(this.getMedico().getNome());
-            this.jLabelEspecialidade.setText(this.getMedico().getEspecialidade());
+        if(this.getExame() != null){
+            this.jLabelDoutor.setText(this.getExame().getNome());
         
             Calendar cal = Calendar.getInstance();
             int month = cal.get(Calendar.MONTH) + 1;
@@ -153,7 +152,7 @@ public class AgendaExame_Passo2 extends javax.swing.JFrame {
             this.setDataPesq(jDayChooser.getDay()+"/"+month+"/"+year);
             ConsultaController consulta = new ConsultaController();
 
-            ArrayList<Atendimento> cons = consulta.pesquisarConsulta(this.getDataPesq(), this.getMedico().getId());
+            ArrayList<Atendimento> cons = consulta.pesquisarConsultaExame(this.getDataPesq(), this.getExame().getNome());
             
             String horario;
             int horas = 8;

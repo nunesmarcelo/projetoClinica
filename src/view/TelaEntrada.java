@@ -68,6 +68,11 @@ public class TelaEntrada extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jButton5.setText("Cancelar um Exame");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5);
         jButton5.setBounds(467, 311, 363, 51);
 
@@ -210,6 +215,12 @@ public class TelaEntrada extends javax.swing.JFrame {
         CadastroCliente cadastro = new CadastroCliente();
         cadastro.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+    
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        CancelarExame cancelamento = new CancelarExame();
+        cancelamento.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         CancelarConsulta cancelamento = new CancelarConsulta();

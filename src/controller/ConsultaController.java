@@ -31,6 +31,11 @@ public class ConsultaController {
         return dao.pesquisarAtendimento(dia, id_medico);
     }
     
+    public ArrayList<Atendimento> pesquisarConsultaExame(String dia, String id_medico){
+        AtendimentoDao dao = new AtendimentoDao();
+        return dao.pesquisarAtendimento(dia, id_medico);
+    }
+    
     public ArrayList<Atendimento> pesquisarConsultaCPF(String cpf){
         AtendimentoDao dao = new AtendimentoDao();
         return dao.pesquisarAtendimentoCPF(cpf, " IS NULL", " IS NOT NULL");

@@ -92,6 +92,45 @@ public class AtendimentoDao {
            
     }
     
+    public ArrayList<Atendimento> pesquisarAtendimentoExame(String dia,String exame){
+        String sql;
+        PreparedStatement stmt = null;
+        
+        sql = "SELECT * FROM consulta WHERE dia = ? AND exame = ?";
+        try {
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, dia);
+            stmt.setString(2, exame);
+            ResultSet rs = stmt.executeQuery();
+            ArrayList<Atendimento> consulta = null;
+            while(rs.next()){
+                consulta = new ArrayList<Atendimento>();
+                Atendimento cons = new Atendimento();
+                
+                cons.setId(Integer.toString(rs.getInt("id_consulta")));
+                cons.setHorario(rs.getString("horario"));
+                cons.setDia(rs.getString("dia"));
+                cons.setEspecialidade(rs.getString("especialidade"));
+                cons.setExame(rs.getString("exame"));
+                cons.setTipo(rs.getString("tipo"));
+                cons.setId_medico(rs.getString("id_medico"));
+                cons.setId_cliente(rs.getString("id_cliente"));
+                
+                
+                consulta.add(cons);
+            }
+            
+            return consulta;
+        } catch (SQLException ex) {
+            System.err.println("Erro: " + ex);
+            return null;
+        }finally {
+            ConnectionFactory.closeConnection(con, stmt);
+            
+        }  
+           
+    }
+    
     public ArrayList<Atendimento> pesquisarAtendimentoCPF(String cpf,String exame, String atendimento){
         String sql;
         PreparedStatement stmt = null;

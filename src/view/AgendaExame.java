@@ -35,7 +35,6 @@ public class AgendaExame extends javax.swing.JFrame {
         jNome7 = new javax.swing.JLabel();
         jButtonCadastrar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jComboBoxConsulta = new javax.swing.JComboBox<>();
         jNome8 = new javax.swing.JLabel();
         jComboBoxExame = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
@@ -77,13 +76,7 @@ public class AgendaExame extends javax.swing.JFrame {
         getContentPane().add(jButtonCancelar);
         jButtonCancelar.setBounds(285, 282, 127, 43);
 
-        jComboBoxConsulta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxConsultaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComboBoxConsulta);
-        jComboBoxConsulta.setBounds(100, 228, 312, 36);
+        
 
         jNome8.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
         jNome8.setText("Selecione uma Exame:");
@@ -137,14 +130,11 @@ public class AgendaExame extends javax.swing.JFrame {
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         AgendaExame_Passo2 agenda2 = new AgendaExame_Passo2();
 
-        agenda2.setExame((Exame)(jComboBoxConsulta.getSelectedItem()));
+        agenda2.setExame((Exame)(jComboBoxExame.getSelectedItem()));
         agenda2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
-    private void jComboBoxConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxConsultaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxConsultaActionPerformed
 
     private void jComboBoxExameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxExameActionPerformed
         // TODO add your handling code here:
@@ -160,14 +150,7 @@ public class AgendaExame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxExameItemStateChanged
 
     private void jComboBoxExamePopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxExamePopupMenuWillBecomeInvisible
-        if(this.getExm() != null){
-            jComboBoxConsulta.removeAllItems();
-            for(int i=0; i<this.getExm().size();i++){
-                if(this.getExm().get(i).getNome().equals(this.jComboBoxExame.getSelectedItem())){
-                    jComboBoxConsulta.addItem(exm.get(i));
-                }
-            }
-        } 
+      
     }//GEN-LAST:event_jComboBoxExamePopupMenuWillBecomeInvisible
 
     public static void main(String args[]) {
@@ -181,7 +164,6 @@ public class AgendaExame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JComboBox<Object> jComboBoxConsulta;
     private javax.swing.JComboBox<Object> jComboBoxExame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
