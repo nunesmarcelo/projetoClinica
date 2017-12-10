@@ -21,14 +21,14 @@ public class ConnectionFactory {
              return DriverManager.getConnection(URL, USER, PASS);
         } catch (ClassNotFoundException | SQLException ex) {
         	JOptionPane.showMessageDialog(null, "Houve um erro ao conectar ao banco de dados!\n "
-        			+ "PossÌveis problemas: \n "
-        			+ "1∫ -> Seu XAMPP, LAMP ou WAMP podem estar desligados.\n"
-        			+ "2∫ -> Se tudo estiver bem, talvez a importaÁ„o da biblioteca de conex„o "
-        			+ "n„o foi feita corretamente.\n"
-        			+ "		2.1 -> Clique com o bot„o direito no projeto, e depois em 'Build Path' e"
-        			+ " v· em 'Add External Archives'.\n"
-        			+ "		2.2 -> Caminhe atÈ a pasta onde o projeto est· instalado, v· na pasta 'lib'"
-        			+ " e selecione todos os arquivos de l·.\n"
+        			+ "Poss√≠veis problemas: \n "
+        			+ "1 -> Seu XAMPP, LAMP ou WAMP podem estar desligados.\n"
+        			+ "2 -> Se tudo estiver bem, talvez a importa√ß√£o da biblioteca de conex√£o "
+        			+ "n√£o foi feita corretamente.\n"
+        			+ "		2.1 -> Clique com o bot√£o direito no projeto, e depois em 'Build Path' e"
+        			+ " v√° em 'Add External Archives'.\n"
+        			+ "		2.2 -> Caminhe at√© a pasta onde o projeto est√° instalado, v√° na pasta 'lib'"
+        			+ " e selecione todos os arquivos de l√°.\n"
         			+ "		2.3 -> rode novamente o programa. =) ");
             throw new RuntimeException("Erro na conex√£o!",ex);
         }
