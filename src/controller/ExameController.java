@@ -1,11 +1,14 @@
 package controller;
 
 import dao.ExameDao;
-
+import dao.MedicoDao;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import model.Atendimento;
-import controller.AutorizacaoController;;
+
+import model.Exame;
+import model.Medico;
+
 
 public class ExameController {
     
@@ -13,33 +16,15 @@ public class ExameController {
         
     }
     
-    
-    public void cadastrarExame(Atendimento Exame){
-    	AutorizacaoController autorizar =  new AutorizacaoController(); 
-    	
-    	if (autorizar.autorizacao(Exame.getTipo())) {
-	    	ExameDao daoConsulta = new ExameDao();
-	        if(daoConsulta.cadastrarExame(Exame)){
-	              JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!", "Reposta do servidor", JOptionPane.PLAIN_MESSAGE);
-	        }       
-    	}
-    
+    public void cadastrarExame(Exame exame){
+       ExameDao daoExame = new ExameDao();
+        if(daoExame.cadastrarExame(exame)){
+              JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!", "Reposta do servidor", JOptionPane.PLAIN_MESSAGE);
+        }       
     }
     
-    
-    public ArrayList<Atendimento> pesquisarExame(String dia, String id_medico){
-        ExameDao dao = new ExameDao();
-        return dao.pesquisarExame(dia, id_medico);
-    }
-    
-    public ArrayList<Atendimento> pesquisarExameCPF(String cpf){
-    	ExameDao dao = new ExameDao();
-        return dao.pesquisarExameCPF(cpf);
-    }
-    
-    public Boolean cancelarExame(int idConsuta) {
-    	ExameDao dao = new ExameDao();
-        return dao.cancelarExame(idConsuta);
-    	
+    public ArrayList<Exame> pesquisarExame(){
+        ExameDao daoExame= new ExameDao();
+        return daoExame.pesquisarExame();
     }
 }

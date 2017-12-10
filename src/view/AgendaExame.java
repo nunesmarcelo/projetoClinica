@@ -1,25 +1,28 @@
 package view;
-import controller.MedicoController;
+import controller.ExameController;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import model.Exame;
 import model.Medico;
 
-public class AgendaConsulta extends javax.swing.JFrame {
-    private ArrayList<Medico> med ;
+public class AgendaExame extends javax.swing.JFrame {
+    private ArrayList<Exame> exm ;
 
-    public AgendaConsulta() {
-    	super("Agendamento de Consulta");
+    public AgendaExame() {
+    	super("Agendamento de Exame");
     	initComponents();
          
-        MedicoController medico = new MedicoController();
+        ExameController exame = new ExameController();
         
-        med = medico.pesquisarMedico();
+        exm = exame.pesquisarExame();
+        
         int i;
-        for(i=0;i<med.size();i++){
-            jComboBoxEspecialidade.addItem(med.get(i).getEspecialidade());
+        for(i=0;i<exm.size();i++){
+            jComboBoxExame.addItem(exm.get(i).getNome());
         }
 
     }
@@ -34,7 +37,7 @@ public class AgendaConsulta extends javax.swing.JFrame {
         jButtonCancelar = new javax.swing.JButton();
         jComboBoxConsulta = new javax.swing.JComboBox<>();
         jNome8 = new javax.swing.JLabel();
-        jComboBoxEspecialidade = new javax.swing.JComboBox<>();
+        jComboBoxExame = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -43,12 +46,12 @@ public class AgendaConsulta extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 18)); // NOI18N
-        jLabel2.setText("Agendar uma Consulta");
+        jLabel2.setText("Agendar um Exame");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(146, 21, 228, 34);
 
         jNome7.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jNome7.setText("Selecione um médico:");
+        jNome7.setText("Selecione um exame:");
         getContentPane().add(jNome7);
         jNome7.setBounds(100, 190, 158, 34);
 
@@ -83,36 +86,36 @@ public class AgendaConsulta extends javax.swing.JFrame {
         jComboBoxConsulta.setBounds(100, 228, 312, 36);
 
         jNome8.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
-        jNome8.setText("Selecione uma especialidade:");
+        jNome8.setText("Selecione uma Exame:");
         getContentPane().add(jNome8);
         jNome8.setBounds(100, 96, 158, 34);
 
-        jComboBoxEspecialidade.addItemListener(new java.awt.event.ItemListener() {
+        jComboBoxExame.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBoxEspecialidadeItemStateChanged(evt);
+                jComboBoxExameItemStateChanged(evt);
             }
         });
-        jComboBoxEspecialidade.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+        jComboBoxExame.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
             }
             public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                jComboBoxEspecialidadePopupMenuWillBecomeInvisible(evt);
+                jComboBoxExamePopupMenuWillBecomeInvisible(evt);
             }
             public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
             }
         });
-        jComboBoxEspecialidade.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxExame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxEspecialidadeActionPerformed(evt);
+                jComboBoxExameActionPerformed(evt);
             }
         });
-        jComboBoxEspecialidade.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        jComboBoxExame.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jComboBoxEspecialidadePropertyChange(evt);
+                jComboBoxExamePropertyChange(evt);
             }
         });
-        getContentPane().add(jComboBoxEspecialidade);
-        jComboBoxEspecialidade.setBounds(100, 136, 312, 36);
+        getContentPane().add(jComboBoxExame);
+        jComboBoxExame.setBounds(100, 136, 312, 36);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/teste.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -132,8 +135,9 @@ public class AgendaConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarMouseClicked
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        AgendaConsulta_Passo2 agenda2 = new AgendaConsulta_Passo2();
-        agenda2.setMedico((Medico)(jComboBoxConsulta.getSelectedItem()));
+        AgendaExame_Passo2 agenda2 = new AgendaExame_Passo2();
+
+        agenda2.setExame((Exame)(jComboBoxConsulta.getSelectedItem()));
         agenda2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
@@ -142,29 +146,29 @@ public class AgendaConsulta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxConsultaActionPerformed
 
-    private void jComboBoxEspecialidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEspecialidadeActionPerformed
+    private void jComboBoxExameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxExameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxEspecialidadeActionPerformed
+    }//GEN-LAST:event_jComboBoxExameActionPerformed
 
-    private void jComboBoxEspecialidadePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jComboBoxEspecialidadePropertyChange
+    private void jComboBoxExamePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jComboBoxExamePropertyChange
        
         
-    }//GEN-LAST:event_jComboBoxEspecialidadePropertyChange
+    }//GEN-LAST:event_jComboBoxExamePropertyChange
 
-    private void jComboBoxEspecialidadeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxEspecialidadeItemStateChanged
+    private void jComboBoxExameItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxExameItemStateChanged
         
-    }//GEN-LAST:event_jComboBoxEspecialidadeItemStateChanged
+    }//GEN-LAST:event_jComboBoxExameItemStateChanged
 
-    private void jComboBoxEspecialidadePopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxEspecialidadePopupMenuWillBecomeInvisible
-        if(this.getMed() != null){
+    private void jComboBoxExamePopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxExamePopupMenuWillBecomeInvisible
+        if(this.getExm() != null){
             jComboBoxConsulta.removeAllItems();
-            for(int i=0; i<this.getMed().size();i++){
-                if(this.getMed().get(i).getEspecialidade().equals(this.jComboBoxEspecialidade.getSelectedItem())){
-                    jComboBoxConsulta.addItem(med.get(i));
+            for(int i=0; i<this.getExm().size();i++){
+                if(this.getExm().get(i).getNome().equals(this.jComboBoxExame.getSelectedItem())){
+                    jComboBoxConsulta.addItem(exm.get(i));
                 }
             }
         } 
-    }//GEN-LAST:event_jComboBoxEspecialidadePopupMenuWillBecomeInvisible
+    }//GEN-LAST:event_jComboBoxExamePopupMenuWillBecomeInvisible
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -178,7 +182,7 @@ public class AgendaConsulta extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JComboBox<Object> jComboBoxConsulta;
-    private javax.swing.JComboBox<Object> jComboBoxEspecialidade;
+    private javax.swing.JComboBox<Object> jComboBoxExame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -187,12 +191,12 @@ public class AgendaConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jNome8;
     // End of variables declaration//GEN-END:variables
 
-    public ArrayList<Medico> getMed() {
-        return med;
+    public ArrayList<Exame> getExm() {
+        return this.exm;
     }
 
-    public void setMed(ArrayList<Medico> med) {
-        this.med = med;
+    public void setExm(ArrayList<Exame> exm) {
+        this.exm = exm;
     }
 
 

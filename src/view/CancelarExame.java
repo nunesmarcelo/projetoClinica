@@ -1,4 +1,6 @@
 package view;
+import java.util.ArrayList;
+
 import controller.ClienteController;
 import controller.ConsultaController;
 import model.Cliente;
@@ -129,7 +131,15 @@ public class CancelarExame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxActionPerformed
 
     private void jTextCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCpfActionPerformed
-        
+    	ConsultaController consul = new ConsultaController();
+
+        ArrayList<Atendimento> atend = consul.pesquisarConsultaCPF(jTextCpf.getText());
+    	if( atend.size() > 0) {
+        	int i;
+    		for(i=0;i<atend.size();i++){
+    			jComboBox.addItem(atend.get(i).getResumo());
+            }
+    	}
     }//GEN-LAST:event_jTextCpfActionPerformed
 
     public static void main(String args[]) {

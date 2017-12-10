@@ -1,4 +1,6 @@
 package view;
+import java.util.ArrayList;
+
 import controller.ClienteController;
 import controller.ConsultaController;
 import model.Cliente;
@@ -115,7 +117,9 @@ public class CancelarConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarMouseClicked
 
     private void jButtonCancelarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarConsultaActionPerformed
-        
+    	ConsultaController consul = new ConsultaController();
+
+    	consul.cancelarContulta(Integer.valueOf( ((((String) jComboBox.getSelectedItem()).split(" "))[0])));
     }//GEN-LAST:event_jButtonCancelarConsultaActionPerformed
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
@@ -130,6 +134,16 @@ public class CancelarConsulta extends javax.swing.JFrame {
 
     private void jTextCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCpfActionPerformed
         
+    	ConsultaController consul = new ConsultaController();
+
+        ArrayList<Atendimento> atend = consul.pesquisarConsultaCPF(jTextCpf.getText());
+    	if( atend.size() > 0) {
+        	int i;
+    		for(i=0;i<atend.size();i++){
+    			jComboBox.addItem(atend.get(i).getResumo());
+            }
+    	}
+    	
     }//GEN-LAST:event_jTextCpfActionPerformed
 
     public static void main(String args[]) {

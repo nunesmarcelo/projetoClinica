@@ -96,6 +96,16 @@ public class Atendimento {
         this.nomeCliente = nomeCliente;
     }
 
+    public String getResumo() {
+    	if(this.getEspecialidade() == null) {
+	    	return (this.getId()+" "+
+					this.getExame()+" "+
+					this.getDia()+" ");
+    	}
+    	return (this.getId()+" "+
+				this.getEspecialidade()+" "+
+				this.getDia()+" ");
+    }
 	@Override
 	public String toString() {
 		return "Consulta [id=" + id + ", horario=" + horario + ", dia=" + dia + ", especialidade=" + especialidade

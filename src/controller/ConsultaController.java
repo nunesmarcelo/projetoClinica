@@ -1,6 +1,6 @@
 package controller;
 
-import dao.ConsultaDao;
+import dao.AtendimentoDao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Atendimento;
@@ -17,8 +17,8 @@ public class ConsultaController {
     	AutorizacaoController autorizar =  new AutorizacaoController(); 
     	
     	if (autorizar.autorizacao(consulta.getTipo())) {
-	    	ConsultaDao daoConsulta = new ConsultaDao();
-	        if(daoConsulta.cadastrarConsulta(consulta)){
+	    	AtendimentoDao daoConsulta = new AtendimentoDao();
+	        if(daoConsulta.cadastrarAtendimento(consulta)){
 	              JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!!", "Reposta do servidor", JOptionPane.PLAIN_MESSAGE);
 	        }       
     	}
@@ -27,18 +27,18 @@ public class ConsultaController {
     
     
     public ArrayList<Atendimento> pesquisarConsulta(String dia, String id_medico){
-        ConsultaDao dao = new ConsultaDao();
-        return dao.pesquisarConsulta(dia, id_medico);
+        AtendimentoDao dao = new AtendimentoDao();
+        return dao.pesquisarAtendimento(dia, id_medico);
     }
     
     public ArrayList<Atendimento> pesquisarConsultaCPF(String cpf){
-        ConsultaDao dao = new ConsultaDao();
-        return dao.pesquisarConsultaCPF(cpf);
+        AtendimentoDao dao = new AtendimentoDao();
+        return dao.pesquisarAtendimentoCPF(cpf, " IS NULL", " IS NOT NULL");
     }
     
-    public Boolean cancelarContulta(int idConsuta) {
-    	ConsultaDao dao = new ConsultaDao();
-        return dao.cancelarConsulta(idConsuta);
+    public Boolean cancelarContulta(int idConsulta) {
+    	AtendimentoDao dao = new AtendimentoDao();
+        return dao.cancelarAtendimento(idConsulta);
     	
     }
 }

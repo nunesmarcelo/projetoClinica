@@ -89,8 +89,14 @@ public class TelaEntrada extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         jButton3.setText("Agendar um Exame");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
         jButton3.setBounds(467, 217, 363, 48);
+        
 
         jButtonCancelar.setBackground(new java.awt.Color(255, 51, 51));
         jButtonCancelar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -181,6 +187,11 @@ public class TelaEntrada extends javax.swing.JFrame {
        agendar.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        AgendaExame agendarExame = new AgendaExame();
+        agendarExame.setVisible(true);
+     }//GEN-LAST:event_jButton2ActionPerformed
+    
     private void jButtonCadastrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrar1ActionPerformed
         JOptionPane.showMessageDialog(null, "Grupo formado por: \n     Ananda \n     Giovanna \n     Marcelo \n     Marlon\nDisciplina: Programação Modular \n"
                 + "Professor: Helton \nAno: 2017/2", "Informações", JOptionPane.INFORMATION_MESSAGE);

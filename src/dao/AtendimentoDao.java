@@ -10,16 +10,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import model.Atendimento;
 
-public class ConsultaDao {
+public class AtendimentoDao {
     Connection con = null;
     
     
-    public ConsultaDao(){
+    public AtendimentoDao(){
         con = ConnectionFactory.getConnection();
     }
     
     
-    public boolean cadastrarConsulta(Atendimento consulta){
+    public boolean cadastrarAtendimento(Atendimento consulta){
                
         String sql = "INSERT INTO consulta (horario,dia,especialidade,exame,tipo,id_medico,id_cliente,nome_cliente,nome_medico) VALUES ( ?,?,?,?,?,?,?,?,?);";
 
@@ -53,7 +53,7 @@ public class ConsultaDao {
         }              
     }
     
-    public ArrayList<Atendimento> pesquisarConsulta(String dia,String id_medico){
+    public ArrayList<Atendimento> pesquisarAtendimento(String dia,String id_medico){
         String sql;
         PreparedStatement stmt = null;
         
@@ -92,18 +92,20 @@ public class ConsultaDao {
            
     }
     
-    public ArrayList<Atendimento> pesquisarConsultaCPF(String cpf){
+    public ArrayList<Atendimento> pesquisarAtendimentoCPF(String cpf,String exame, String atendimento){
         String sql;
         PreparedStatement stmt = null;
         
-        sql = "SELECT consulta.* FROM consulta INNER JOIN cliente WHERE cliente.cpf = ? AND consulta.exame IS NULL ";
+        sql = "SELECT consulta.* FROM consulta INNER JOIN cliente WHERE cliente.cpf = ? AND consulta.exame ? AND consulta.atendimento ?";
         try {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, cpf);
+            stmt.setString(2, exame);
+            stmt.setString(3, atendimento);
             ResultSet rs = stmt.executeQuery();
-            ArrayList<Atendimento> consulta = null;
+            ArrayList<Atendimento> atend = null;
             while(rs.next()){
-                consulta = new ArrayList<Atendimento>();
+                atend = new ArrayList<Atendimento>();
                 Atendimento cons = new Atendimento();
                 
                 cons.setId(Integer.toString(rs.getInt("id_consulta")));
@@ -116,10 +118,10 @@ public class ConsultaDao {
                 cons.setId_cliente(rs.getString("id_cliente"));
                 
                 
-                consulta.add(cons);
+                atend.add(cons);
             }
             
-            return consulta;
+            return atend;
         } catch (SQLException ex) {
             System.err.println("Erro: " + ex);
             return null;
@@ -129,7 +131,7 @@ public class ConsultaDao {
         }          
     }
     
-    public boolean cancelarConsulta(int  idconsulta){
+    public boolean cancelarAtendimento(int  idconsulta){
         
         String sql = "DELETE FROM consulta WHERE id_consulta = ?;";
 
