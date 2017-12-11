@@ -31,10 +31,10 @@ public class ExecucaoExameController {
     
     public ArrayList<Atendimento> pesquisarExameCPF(String cpf){
     	AtendimentoDao dao = new AtendimentoDao();
-        return dao.pesquisarAtendimentoCPF(cpf, " IS NOT NULL", " IS NULL");
+        return dao.pesquisarExameCPF(cpf);
     }
     
-    public Boolean cancelarExame(int idConsulta) {
+    public Boolean cancelarAtendimento(String idConsulta) {
     	AtendimentoDao dao = new AtendimentoDao();
         return dao.cancelarAtendimento(idConsulta);
     	

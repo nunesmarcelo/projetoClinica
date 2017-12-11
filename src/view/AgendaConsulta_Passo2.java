@@ -150,13 +150,14 @@ public class AgendaConsulta_Passo2 extends javax.swing.JFrame {
 
     private void jDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDayChooserPropertyChange
         if(this.getMedico() != null){
+            jComboBox.removeAllItems();
             this.jLabelDoutor.setText(this.getMedico().getNome());
             this.jLabelEspecialidade.setText(this.getMedico().getEspecialidade());
         
             Calendar cal = Calendar.getInstance();
             int month = cal.get(Calendar.MONTH) + 1;
             int year = cal.get(Calendar.YEAR);
-            this.setDataPesq(jDayChooser.getDay()+"/"+month+"/"+year);
+            this.setDataPesq(year+"-"+month+"-"+jDayChooser.getDay());
             ConsultaController consulta = new ConsultaController();
 
             ArrayList<Atendimento> cons = consulta.pesquisarConsulta(this.getDataPesq(), this.getMedico().getId());

@@ -144,15 +144,15 @@ public class AgendaExame_Passo2 extends javax.swing.JFrame {
 
     private void jDayChooserPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDayChooserPropertyChange
         if(this.getExame() != null){
-
+            jComboBox.removeAllItems();
             this.jLabelEspecialidade.setText(this.getExame().getNome());
         
             Calendar cal = Calendar.getInstance();
             int month = cal.get(Calendar.MONTH) + 1;
             int year = cal.get(Calendar.YEAR);
-            this.setDataPesq(jDayChooser.getDay()+"/"+month+"/"+year);
+            this.setDataPesq(year+"-"+month+"-"+jDayChooser.getDay());
             ConsultaController consulta = new ConsultaController();
-
+            
             ArrayList<Atendimento> cons = consulta.pesquisarConsultaExame(this.getDataPesq(), this.getExame().getNome());
             
             String horario;
@@ -162,6 +162,7 @@ public class AgendaExame_Passo2 extends javax.swing.JFrame {
             for(int i=0;i<18;i++){
                 horario = horas+":"+min;
                 if(cons != null){
+                    System.err.println("aqui"+cons+ " vamo ver");
                     for(int j=0;j<cons.size();j++){
                         if(cons.get(j).getHorario().equals(horario)){
                             jaUsado = true;

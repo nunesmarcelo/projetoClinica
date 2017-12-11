@@ -108,9 +108,12 @@ public class Atendimento {
     }
 	@Override
 	public String toString() {
-		return "Consulta [id=" + id + ", horario=" + horario + ", dia=" + dia + ", especialidade=" + especialidade
-				+ ", exame=" + exame + ", tipo=" + tipo + ", id_medico=" + id_medico + ", id_cliente=" + id_cliente
-				+ ", nomeMedico=" + nomeMedico + ", nomeCliente=" + nomeCliente + "]";
+		if(this.getEspecialidade() != null){
+                    return "Area:"+this.getEspecialidade();
+                }
+                else{
+                    return "Exame:"+this.getExame();
+                }
 	}
     
 }

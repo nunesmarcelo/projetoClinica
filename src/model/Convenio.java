@@ -20,7 +20,7 @@ public class Convenio implements Pagamento{
 			
 		}
 		
-		return false;
+		return true;
 	}
 	
 	private int escolhe() {

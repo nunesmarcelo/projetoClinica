@@ -36,7 +36,9 @@ public class ClienteDao {
             stmt.setString(7, cliente.getCelular());
             stmt.setString(8, cliente.getTelefone());
             stmt.setString(9, cliente.getEmail());
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            
+            //System.err.println("\ndata:"+ cliente.getDataNasc());
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             stmt.setDate(10, new java.sql.Date(format.parse(cliente.getDataNasc()).getTime()));
             
             stmt.executeUpdate();

@@ -14,9 +14,9 @@ public class Cortesia implements Pagamento{
 		contador++;
 		if(contador==5) {
 			contador = 0;
-			return true;
+			return false;
 		}
 		
-		return false;
+		return true;
 	}
 }

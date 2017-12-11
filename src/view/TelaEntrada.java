@@ -70,7 +70,7 @@ public class TelaEntrada extends javax.swing.JFrame {
         jButton5.setText("Cancelar um Exame");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-            	jButton5ActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton5);
@@ -101,7 +101,6 @@ public class TelaEntrada extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3);
         jButton3.setBounds(467, 217, 363, 48);
-        
 
         jButtonCancelar.setBackground(new java.awt.Color(255, 51, 51));
         jButtonCancelar.setFont(new java.awt.Font("Book Antiqua", 0, 12)); // NOI18N
@@ -187,10 +186,10 @@ public class TelaEntrada extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        AgendaConsulta agendar = new AgendaConsulta();
        agendar.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         AgendaExame agendarExame = new AgendaExame();
@@ -216,10 +215,10 @@ public class TelaEntrada extends javax.swing.JFrame {
         cadastro.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
     
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         CancelarExame cancelamento = new CancelarExame();
         cancelamento.setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }                                        
 
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -227,6 +226,16 @@ public class TelaEntrada extends javax.swing.JFrame {
         cancelamento.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    /*
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        AgendaExame agenda = new AgendaExame();
+        agenda
+    }//GEN-LAST:event_jButton3ActionPerformed
+*/
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
